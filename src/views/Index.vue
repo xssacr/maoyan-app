@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" @click="SET_ISSHOWMENU(false)">
     <HeaderBar title="猫眼电影" />
     <main>
       <DownloadAppAd />
@@ -23,12 +23,16 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex";
 import HeaderBar from "../components/HeaderBar";
 import DownloadAppAd from "../components/DownloadAppAd";
 export default {
   components: {
     HeaderBar,
     DownloadAppAd
+  },
+  methods: {
+    ...mapMutations(["SET_ISSHOWMENU"])
   }
 };
 </script>
@@ -41,6 +45,8 @@ export default {
   flex-direction: column;
   main {
     flex: 1;
+    display: flex;
+    flex-direction: column;
   }
   .footer {
     line-height: 48px;
