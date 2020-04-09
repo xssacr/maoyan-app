@@ -1,7 +1,14 @@
 <template>
   <div>
-    <router-link to="/index/movie/hotshowing">正在热映</router-link>
-    <router-link to="/index/movie/commingsoon">即将上映</router-link>
+    <div class="topbar">
+      <router-link to="/citylist">
+        <span>北京</span>
+        <i class="iconfont icon-down"></i>
+      </router-link>
+      <router-link to="/index/movie/hotshowing" active-class="topbar-active">正在热映</router-link>
+      <router-link to="/index/movie/commingsoon" active-class="topbar-active">即将上映</router-link>
+      <router-link to="/search" tag="i" class="iconfont icon-sousuo"></router-link>
+    </div>
 
     <router-view></router-view>
   </div>
@@ -11,5 +18,38 @@
 export default {};
 </script>
 
-<style>
+<style lang="scss" scoped>
+@import "assets/mixin.scss";
+.topbar {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  @include border_1px(#e6e6e6, bottom);
+  .icon-sousuo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ed443f;
+    display: block;
+    width: 40px;
+    line-height: 44px;
+    text-align: center;
+  }
+  & > :not(.icon-sousuo) {
+    flex: 1;
+    font-size: 15px;
+    color: #787878;
+    line-height: 44px;
+    position: relative;
+  }
+  & > .topbar-active::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: #ed443f;
+    position: absolute;
+    transform: translateY(-50%);
+  }
+}
 </style>
