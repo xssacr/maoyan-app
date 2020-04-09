@@ -1,0 +1,58 @@
+@mixin border_1px($color, $direction) {
+  position: relative;
+  @media (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5) {
+    @include mybefore($color, 0.6667, $direction);
+  }
+
+  @media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {
+    @include mybefore($color, 0.5, $direction);
+  }
+
+  @media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+    @include mybefore($color, 0.3334, $direction);
+  }
+}
+
+@mixin mybefore($color, $sy, $direction) {
+  &::before {
+    content: "";
+    display: block;
+    background-color: $color;
+
+    @if $direction == top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      transform: scaleY($sy);
+    }
+
+    @if $direction == bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      transform: scaleY($sy);
+    }
+
+    @if $direction == left {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1px;
+      height: 100%;
+      transform: scaleX($sy);
+    }
+
+    @if $direction == right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 1px;
+      height: 0.45rem;
+      transform: scaleX($sy);
+    }
+  }
+}
