@@ -2,6 +2,7 @@
   <div class="container">
     <HeaderBar title="猫眼电影" />
     <main>
+      <DownloadAppAd />
       <router-view></router-view>
     </main>
     <ul class="footer">
@@ -22,10 +23,12 @@
 </template>
 
 <script>
-import HeaderBar from "../components/HeaderBar.vue";
+import HeaderBar from "../components/HeaderBar";
+import DownloadAppAd from "../components/DownloadAppAd";
 export default {
   components: {
-    HeaderBar
+    HeaderBar,
+    DownloadAppAd
   }
 };
 </script>
