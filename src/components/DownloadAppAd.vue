@@ -27,7 +27,7 @@ export default {};
   }
   div {
     position: absolute;
-    left: 66px;
+    left: 70px;
     top: 13px;
     h1 {
       font-size: 17px;

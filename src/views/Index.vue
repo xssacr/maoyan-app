@@ -45,8 +45,7 @@ export default {
   flex-direction: column;
   main {
     flex: 1;
-    display: flex;
-    flex-direction: column;
+    overflow: hidden;
   }
   .footer {
     line-height: 48px;

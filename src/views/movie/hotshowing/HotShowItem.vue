@@ -37,6 +37,10 @@ export default {
   display: flex;
   padding: 12px 15px;
   @include border_1px(#ccc, bottom);
+  img{
+    width: 64px;
+    height: 90px;
+  }
   .info {
     width: 206px;
     padding: 0 10px;
