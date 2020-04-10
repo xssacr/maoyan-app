@@ -10,7 +10,7 @@
       <router-link to="/search" tag="i" class="iconfont icon-sousuo"></router-link>
     </div>
 
-    <router-view class="movie-main"></router-view>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -57,9 +57,6 @@ export default {};
       position: absolute;
       transform: translateY(-50%);
     }
-  }
-  .movie-main {
-    flex: 1;
   }
 }
 </style>

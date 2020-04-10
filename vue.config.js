@@ -27,6 +27,16 @@ module.exports = {
     }
   },
   chainWebpack: config => {
-    return config.resolve.alias.set('assets', path.resolve(__dirname, './src/assets'))
+    return config.resolve.alias
+      .set('assets', path.resolve(__dirname, './src/assets'))
+      .set('api', path.resolve(__dirname, './src/api'))
+  },
+  devServer: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3001/',
+        changeOrigin: true
+      }
+    }
   }
 }
