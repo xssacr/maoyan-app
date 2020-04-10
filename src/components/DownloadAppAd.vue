@@ -17,6 +17,7 @@ export default {};
 @import "assets/mixin.scss";
 .ad-container {
   height: 64px;
+  z-index: -1;
   @include border_1px(#e6e6e6, bottom);
   img {
     position: absolute;

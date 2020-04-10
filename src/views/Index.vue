@@ -2,7 +2,7 @@
   <div class="container" @click="SET_ISSHOWMENU(false)">
     <HeaderBar title="猫眼电影" />
     <main>
-      <DownloadAppAd />
+      <DownloadAppAd v-show="isShowAd" />
       <router-view></router-view>
     </main>
     <ul class="footer">
@@ -23,13 +23,16 @@
 </template>
 
 <script>
-import { mapMutations } from "vuex";
+import { mapState, mapMutations } from "vuex";
 import HeaderBar from "../components/HeaderBar";
 import DownloadAppAd from "../components/DownloadAppAd";
 export default {
   components: {
     HeaderBar,
     DownloadAppAd
+  },
+  computed: {
+    ...mapState(["isShowAd"])
   },
   methods: {
     ...mapMutations(["SET_ISSHOWMENU"])
