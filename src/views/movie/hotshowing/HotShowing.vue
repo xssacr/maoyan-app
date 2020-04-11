@@ -55,6 +55,7 @@ export default {
         this.scroll.finishPullUp();
         return;
       }
+      Indicator.open();
       let rs = await getHotShowing({ _start: this.start, _limit: this.limit });
       if (rs.data.length < this.limit) {
         // 数据不够一页，说明到达了底部
@@ -69,13 +70,12 @@ export default {
         this.datas.push(...rs.data);
       }
 
-      Indicator.open();
       // 保证 dom 已经生成，数据已经渲染完成了
       this.$nextTick(() => {
-        Indicator.close();
         this.initScroll();
         this.scroll.finishPullUp();
         this.start += this.limit;
+        Indicator.close();
       });
     }
   },

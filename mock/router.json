@@ -1,3 +1,4 @@
 {
-  "/api/ajax/hotshowing": "/hotshowing"
+  "/api/ajax/hotshowing": "/hotshowing",
+  "/api/ajax/mostexpected": "/mostexpected"
 }
